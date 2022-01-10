@@ -4,6 +4,9 @@
 
 # projet ML partie 2
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16jhYvrql9nC64A-nEGbjp2hJ4PK2Juw6#scrollTo=R7r5LOl4CprB)
+
+
 ## NNI
 
 ## Définition de l'espace de recherche
