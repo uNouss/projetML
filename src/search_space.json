@@ -2,11 +2,8 @@
     "optimizer": {"_type": "choice","_value": ["SGD", "Adam", "RMSprop"]},
     "learning_rate": {"_type": "quniform","_value": [0.005, 0.05, 0.01]},
     "nb_nodes": {"_type": "choice", "_value": [128, 256]},
-    "metrics": {"_type": "choice", "_value": ["accuracy", "categorical_crossentropy"]},
+    "metrics": {"_type": "choice", "_value": ["accuracy"]},
     "layers": {"_type": "choice", "_value":[2 ,4, 6]},
     "activation_function": {"_type": "choice", "_value": ["ReLU", "LeakyReLU", "Sigmoid", "Tanh", "Softplus"]},
-    "loss_function": {"_type": "choice", "_value": ["MSELoss", "SmoothL1Loss"]},
-    "hidden_size_1": {"_type": "choice", "_value": [4, 8, 16, 32, 64, 128]},
-    "hidden_size_2": {"_type": "choice", "_value": [0, 4, 8, 16, 32]},
-    "hidden_size_3": {"_type": "choice", "_value": [0, 4, 8, 16, 32]}
+    "loss_function": {"_type": "choice", "_value": ["MSELoss", "SmoothL1Loss"]}
 }
