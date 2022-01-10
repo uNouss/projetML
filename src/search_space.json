@@ -1,0 +1,6 @@
+{
+    "optimizer":{"_type":"choice","_value":["adam", "SGD"]},
+    "learning_rate":{"_type":"choice","_value":[0.0001, 0.001, 0.002, 0.005, 0.01]},
+    "nb_nodes": {"_type": "choice", "_value": [128, 256]},
+    "metrics": {"_type": "choice", "_value": ["accuracy", "auc"]}
+}
