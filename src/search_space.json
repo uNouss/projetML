@@ -1,9 +1,7 @@
 {
-    "optimizer": {"_type": "choice","_value": ["SGD", "Adam", "RMSprop"]},
-    "learning_rate": {"_type": "quniform","_value": [0.005, 0.05, 0.01]},
-    "nb_nodes": {"_type": "choice", "_value": [128, 256]},
+    "optimizer": {"_type": "choice","_value": ["SGD", "Adam"]},
+    "learning_rate": {"_type": "quniform","_value": [0.001, 0.05, 0.01]},
+    "nb_nodes": {"_type": "choice", "_value": [64, 128, 256, 512]},
     "metrics": {"_type": "choice", "_value": ["accuracy"]},
-    "layers": {"_type": "choice", "_value":[2 ,4, 6]},
-    "activation_function": {"_type": "choice", "_value": ["ReLU", "LeakyReLU", "Sigmoid", "Tanh", "Softplus"]},
-    "loss_function": {"_type": "choice", "_value": ["MSELoss", "SmoothL1Loss"]}
+    "activation_function": {"_type": "choice", "_value": ["relu"]}
 }
