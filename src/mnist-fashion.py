@@ -33,27 +33,21 @@ def create_mnist_model(hyper_params, input_shape=(H, W, 1), num_classes=NUM_CLAS
     '''
     Create simple convolutional model
     '''
-    #model = tf.keras.Sequential([
-    #    tf.keras.layers.Flatten(input_shape=(28, 28)),
-    #    tf.keras.layers.Dense(hyper_params.get('nb_nodes'), activation='relu'),
-    #    tf.keras.layers.Dense(10)
-    #])
-    
     model = tf.keras.Sequential([
         tf.keras.layers.Conv2D(32, kernel_size=(3, 3), activation=hyper_params.get('activation_function'), input_shape=input_shape),
-        tf.keras.layers.Conv2D(64, (3, 3), activation=hyper_params.get('activation_function')),
         tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
+        tf.keras.layers.Conv2D(32, kernel_size=(3, 3), activation=hyper_params.get('activation_function')),
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(hyper_params.get('nb_nodes'), activation=hyper_params.get('activation_function')),
         tf.keras.layers.Dense(num_classes, activation='softmax')
     ])
-    
-    # FIXME: regarder l'utilisation du learning_rate
+
     lr = hyper_params['learning_rate']
-    if hyper_params.get('optimizer') == 'adam':
+    if hyper_params.get('optimizer').lower() == 'adam':
         optimizer = tf.keras.optimizers.Adam(learning_rate=lr)
     else:
         optimizer = tf.keras.optimizers.SGD(learning_rate=lr)
+  
     model.compile(optimizer=optimizer,
               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=hyper_params.get('metrics'))
